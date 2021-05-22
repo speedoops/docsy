@@ -1,4 +1,4 @@
-{{ $tpl := printf "partials/print/content-%s.html" .Page.Type }}
+{{ $tpl := printf "print/content-%s.html" .Page.Type }}
 
 {{ if templates.Exists $tpl }}
   {{ partial $tpl . }}
