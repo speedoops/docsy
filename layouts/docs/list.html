@@ -11,9 +11,9 @@
 		{{ partial "feedback.html" .Site.Params.ui.feedback }}
 		<br />
 	{{ end }}
-	{{ if (.Site.DisqusShortname) }}
+	{{ if (or (.Site.DisqusShortname) (.Site.Params.Comment.WalineServerURL)) }}
 		<br />
-		{{ partial "disqus-comment.html" . }}
+		{{ partial "comment.html" . }}
 	{{ end }}
 	<div class="text-muted mt-5 pt-3 border-top">{{ partial "page-meta-lastmod.html" . }}</div>
 </div>
