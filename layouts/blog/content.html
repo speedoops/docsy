@@ -9,9 +9,9 @@
 	    {{ partial "reading-time.html" . }}
 	{{ end }}
 	{{ .Content }}
-	{{ if (.Site.Params.DisqusShortname) }}
+	{{ if (or (.Site.DisqusShortname) (.Site.Params.Comment.WalineServerURL)) }}
 		<br />
-		{{ partial "disqus-comment.html" . }}
+		{{ partial "comment.html" . }}
 		<br />
 	{{ end }}
 
